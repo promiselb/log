@@ -45,10 +45,8 @@ import (
 	w  "github.com/promiselb/log"
 )
 
-var l = w.NewLogger(nil, "Alex", 0)
-
 func main() {
-
+l := w.NewLogger(nil, "Alex", 0)
 }
 ```
 Use an alias (w in this case) because to not get confused with the default `log` package.
@@ -75,7 +73,6 @@ Alex 2023/01/07 :
 ```
 or this:
 ``` Go
-var l = w.NewLogger(nil, "Alex", 0)
 p := l.MakePrinter("main")
 x := 5
 name := "promiselb"
@@ -100,8 +97,6 @@ to get rid of the flag thingy if if not needed.
 
 ### Print slices
 ``` Go
-var l = w.NewLogger(nil, "Alex", 0)
-
 fruits := []string{"apple", "mango", "orange", "bananas"}
 w.PrintArray(l, "fruits", fruits)
 ```
@@ -121,19 +116,17 @@ Alex 2023/01/07 : fruits:
 It's not used as method because we can't use generics with method functions signature.
 ### Print maps
 ``` Go
-nc main() {
-	var l = w.NewLogger(nil, "Alex", 0)
-
-	idCard := map[string]interface{}{
-		"name": "promiselb",
-		"age":  16.5,
-		"dev":  true,
-	}
-	w.PrintMap(l, "idCard", idCard)
+idCard := map[string]interface{}{
+	"name": "promiselb",
+	"age":  16.5,
+	"dev":  true,
+}
+w.PrintMap(l, "idCard", idCard)
 ```
 Output:
 ```
-	------------------------------
+Alex 2023/01/07 : idCard:
+        ------------------------------
          | dev |true                | 
         ------------------------------
          | name|promiselb           | 
