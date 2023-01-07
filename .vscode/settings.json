@@ -1,0 +1,54 @@
+{
+    
+    "workbench.colorCustomizations": {
+
+        "[Default Dark+]": {
+            "terminal.background":"#131313",
+            "terminal.foreground":"#05f93a",
+            "terminalCursor.background":"#FAC03B",
+            "terminalCursor.foreground":"#ff0000",
+            "terminal.ansiBlack":"#1D2021",
+            "terminal.ansiBlue":"#0D6678",
+            "terminal.ansiBrightBlack":"#ff7300",
+            "terminal.ansiBrightBlue":"#0D6678",
+            "terminal.ansiBrightCyan":"#8BA59B",
+            "terminal.ansiBrightGreen":"#95C085",
+            "terminal.ansiBrightMagenta":"#8F4673",
+            "terminal.ansiBrightRed":"#ff1e00",
+            "terminal.ansiBrightWhite":"#ff00b7",
+            "terminal.ansiBrightYellow":"#fff700",
+            "terminal.ansiCyan":"#00fff2",
+            "terminal.ansiGreen":"#95C085",
+            "terminal.ansiMagenta":"#8F4673",
+            "terminal.ansiRed":"#FB543F",
+            "terminal.ansiWhite":"#A89984",
+            "terminal.ansiYellow":"#FAC03B",
+
+            "terminal.selectionForeground": "#4c00ff",
+            "terminal.selectionBackground": "#ff00b3",
+            "terminal.border":"#fbff00",
+            "terminal.tab.activeBorder": "#ff0000",
+            "scrollbarSlider.background": "#4c00ff"
+        },
+    
+        "material-icon-theme.files.associations": {
+          "**.go":  "Go_gopher",
+          "*.go":   "Go_gopher",
+          "main.go":"Go_gopher",
+          "go":     "Go_gopher",
+          "golang": "Go_gopher",
+          "Go":     "Go_gopher",
+          "Golang": "Go_gopher",
+        },
+
+        "material-icon-theme.languages.associations": {
+            "go":     "Go_gopher",
+            "golang": "Go_gopher",
+            "Go":     "Go_gopher",
+            "Golang": "Go_gopher",
+            "**.go":  "Go_gopher",
+            "*.go":   "Go_gopher",
+            "main.go":"Go_gopher",
+        },
+    }
+}
