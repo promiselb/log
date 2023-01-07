@@ -82,7 +82,7 @@ func (logger *Logger) PrintValue(varName string, v interface{}) {
 
 // PrintArrayPadding print a slice in a form of | i | v | table for any type t of v.
 // Padding is used to determine how much is the space between each i| and v for all i and v.
-func PrintArrayPadding[t vALUESType](logger *Logger, arrName string, arr []t, padding int) {
+func PrintArrayPadding[t VALUESType](logger *Logger, arrName string, arr []t, padding int) {
 	s := ": " + arrName + ":\n\t" + strings.Repeat("-", padding) + "\n\t "
 	for i, v := range arr {
 		s += fmt.Sprintf("| %-4d|%-20v|"+"\n", i, v)
@@ -93,13 +93,13 @@ func PrintArrayPadding[t vALUESType](logger *Logger, arrName string, arr []t, pa
 }
 
 // PrintArrayPadding print a slice in a form of | i | v | table for any type t of v.
-func PrintArray[t vALUESType](logger *Logger, arrName string, arr []t) {
+func PrintArray[t VALUESType](logger *Logger, arrName string, arr []t) {
 	PrintArrayPadding(logger, arrName, arr, 30)
 }
 
 // PrintMapPadding print a map in a form of | key | v | table for any type t of v.
 // Padding is used to determine how much is the space between each key| and v for all i and v.
-func PrintMapPadding[t1 kEYSType, t2 vALUESType](logger *Logger, mapName string, mapp map[t1]t2, padding int) {
+func PrintMapPadding[t1 KEYSType, t2 VALUESType](logger *Logger, mapName string, mapp map[t1]t2, padding int) {
 	s := ": " + mapName + ":\n\t" + strings.Repeat("-", padding) + "\n\t "
 	for i, v := range mapp {
 		s += fmt.Sprintf("| %-4v|%-20v|"+"\n", i, v)
@@ -110,7 +110,7 @@ func PrintMapPadding[t1 kEYSType, t2 vALUESType](logger *Logger, mapName string,
 }
 
 // PrintMapPadding print a map in a form of | key | v | table for any type t of v.
-func PrintMap[t1 kEYSType, t2 vALUESType](logger *Logger, mapName string, mapp map[t1]t2) {
+func PrintMap[t1 KEYSType, t2 VALUESType](logger *Logger, mapName string, mapp map[t1]t2) {
 	PrintMapPadding(logger, mapName, mapp, 30)
 }
 
@@ -138,12 +138,12 @@ func (p Printer) Fatal(err error) {
 // The message contains ✅ to indicate it's non-zero value and ❌ to indicate it is.
 func (p Printer) PrintValue(varName string, v interface{}) {
 	if IsNil(v) {
-		x := fmt.Sprintf("%s%s :\n❌\t{ 👉 %s: %v 👈 }\t", p.logger.prefix, p.name, fmt.Sprintf("%-15s", varName), fmt.Sprintf("%-15s", v))
-		noFlagsLogger.Printf("%-50s T.H. %s\n", x, nbEmojiMap[1])
+		x := fmt.Sprintf("%s%s :\n❌\t{ 👉 %s: %v 👈 }\t", p.logger.prefix, p.name, fmt.Sprintf("%-15s", varName), fmt.Sprintf("%-15v", v))
+		noFlagsLogger.Printf("%-50v T.H. %s\n", x, nbEmojiMap[1])
 		return
 	}
-	x := fmt.Sprintf("%s%s :\n✅\t{ 👉 %s: %v 👈 }\t", p.logger.prefix, p.name, fmt.Sprintf("%-15s", varName), fmt.Sprintf("%-15s", v))
-	noFlagsLogger.Printf("%-50s T.H. %s\n", x, nbEmojiMap[0])
+	x := fmt.Sprintf("%s%s :\n✅\t{ 👉 %s: %v 👈 }\t", p.logger.prefix, p.name, fmt.Sprintf("%-15s", varName), fmt.Sprintf("%-15v", v))
+	noFlagsLogger.Printf("%-50v T.H. %s\n", x, nbEmojiMap[0])
 }
 
 func IsNil(v interface{}) bool {
@@ -167,10 +167,10 @@ var nbEmojiMap = map[int]string{
 	10: "🔟",
 }
 
-type kEYSType interface {
+type KEYSType interface {
 	~string | ~int | ~float64
 }
 
-type vALUESType interface {
-	kEYSType | ~[]interface{}
+type VALUESType interface {
+	KEYSType | ~[]interface{} | interface{}
 }
