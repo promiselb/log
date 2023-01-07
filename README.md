@@ -92,8 +92,8 @@ Alex main :
 ❗       { ❗: error here      ❗ }                       	   T.H. 1️⃣  
 ```
 The outputs look similiars. However, the diffirence is the 1st logs have the time when it occured without the function name,
-while 2nd logs are completely the opposite, the printer must be scoped to function to know in which function this x = v. And
-to get rid of the flag thingy if if not needed.
+while 2nd logs are completely the opposite, the printer must be scoped to the function to know in which function this x = v. And
+to get rid of the flag thingy if not needed.
 
 ### Print slices
 ``` Go
